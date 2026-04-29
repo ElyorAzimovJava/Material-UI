@@ -1,11 +1,11 @@
 
 import './App.css'
-import {Button} from "@mui/material";
+import Create from "./Create.jsx";
 
 function App() {
   return (
     <div>
-        <Button variant={'contained'} >Button</Button>
+     <Create/>
     </div>
   )
 }
