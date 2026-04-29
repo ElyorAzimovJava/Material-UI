@@ -5,6 +5,7 @@ import ButtonComponent from "./ButtonComponent.jsx";
 import Icon from "./Icon.jsx";
 import {createTheme, ThemeProvider} from "@mui/material";
 import {purple} from "@mui/material/colors";
+import InputComponent from "./InputComponents.jsx";
 const theme = createTheme({
     palette: {
         primary:{
@@ -26,6 +27,7 @@ function App() {
      <Create/>
      <ButtonComponent/>
      <Icon/>
+     <InputComponent/>
       </ThemeProvider>
 
   )
