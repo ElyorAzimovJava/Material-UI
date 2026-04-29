@@ -6,6 +6,7 @@ import Icon from "./Icon.jsx";
 import {createTheme, ThemeProvider} from "@mui/material";
 import {purple} from "@mui/material/colors";
 import InputComponent from "./InputComponents.jsx";
+import RadioComponent from "./RadioComponent.jsx";
 const theme = createTheme({
     palette: {
         primary:{
@@ -23,12 +24,15 @@ const theme = createTheme({
 })
 function App() {
   return (
-      <ThemeProvider theme={theme}>
+  <div >
+
+
      <Create/>
      <ButtonComponent/>
      <Icon/>
      <InputComponent/>
-      </ThemeProvider>
+     <RadioComponent/>
+  </div>
 
   )
 }
