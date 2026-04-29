@@ -1,6 +1,13 @@
 import {Typography} from "@mui/material";
-
+import { makeStyles } from '@mui/styles';
+const useStyles = makeStyles({
+    title: {
+        fontSize: '200px !important',
+        color: 'red !important',
+    }
+})
 function Create(){
+    const classes = useStyles();
     return(
         <>
           {/*  <Typography
@@ -16,6 +23,7 @@ function Create(){
             </Typography>*/}
 
             <Typography
+            className={classes.title}
             variant='h3'
             color = 'textSecondary'
             gutterBottom
