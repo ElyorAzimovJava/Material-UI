@@ -2,13 +2,14 @@
 import './App.css'
 import Create from "./Create.jsx";
 import ButtonComponent from "./ButtonComponent.jsx";
-import {Typography} from "@mui/material";
+import Icon from "./Icon.jsx";
 
 function App() {
   return (
     <div>
      <Create/>
      <ButtonComponent/>
+     <Icon/>
 
 
     </div>
