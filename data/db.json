@@ -17,6 +17,12 @@
       "details": "I want to learn reacr in three months",
       "category": "todos",
       "id": "kixy-8P-EVE"
+    },
+    {
+      "title": "Hi",
+      "details": "Hello world",
+      "category": "work",
+      "id": "1X4WksWGSmQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

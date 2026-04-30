@@ -1,26 +1,41 @@
 import {makeStyles} from "@mui/styles";
-import {Drawer, ListItem, ListItemText, Typography, List, ListItemIcon} from "@mui/material";
+import {Drawer, ListItem, ListItemText, Typography, List, ListItemIcon, AppBar, Toolbar, Avatar} from "@mui/material";
 import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import {useLocation, useNavigate} from 'react-router-dom';
+import {format} from 'date-fns';
 const drawerWidth = 240;
-const useStyles = makeStyles({
-    page:{
-        backgroundColor:'#f9f9f9 !important',
-        width: '100% !important'
-    },
-    drawer:{
-      width:drawerWidth,
-    } ,
-    paperDrawer:{
-      width:drawerWidth,
-    },
-    root:{
-        display:"flex",
-    },
-    active :{
-        backgroundColor: '#f4f4f4'
-    }
+const useStyles = makeStyles((theme)=>{
+   return {
+       page: {
+           backgroundColor: '#f9f9f9 !important',
+           width: '100% !important',
+       },
+       drawer: {
+           width: drawerWidth,
+       },
+       paperDrawer: {
+           width: drawerWidth,
+       },
+       root: {
+           display: "flex",
+       },
+       active: {
+           backgroundColor: '#f4f4f4'
+       },
+       appBar: {
+           width: `calc(100% - ${drawerWidth}px) !important`,
+       },
+       toolBar: {
+           height: `calc(100% - ${drawerWidth}px) !important`,
+       },
+       date: {
+           flexGrow: 1,
+       },
+       avatar: {
+           marginLeft: '16px !important'
+       }
+   }
 })
 function Layout({children}) {
     const menuItems = [
@@ -41,6 +56,17 @@ function Layout({children}) {
     return (
 
         <div className={classes.root}>
+            <AppBar className={classes.appBar} elevation={0}>
+              <Toolbar>
+                  <Typography className={classes.date}>
+                     Today is the  {format(new Date(), 'do MMMM Y')}
+                  </Typography>
+                  <Typography>
+                      Elyor
+                  </Typography>
+                  <Avatar src='/programmerpng.png' className={classes.avatar} />
+              </Toolbar>
+            </AppBar>
             <Drawer
              className={classes.drawer}
              variant="permanent"
@@ -68,6 +94,7 @@ function Layout({children}) {
                 </List>
             </Drawer>
            <div className={classes.page}>
+               <div className={classes.toolBar}></div>
                {children}
            </div>
         </div>
