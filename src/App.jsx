@@ -13,6 +13,7 @@ import Link from '@mui/material/Link';
 import Grid from "@mui/material/Grid";
 import {makeStyles} from "@mui/styles";
 import {Container} from "@mui/material";
+import Layout from "./components/Layout.jsx";
 /*
 const theme = createTheme({
     palette: {
@@ -66,12 +67,14 @@ function App() {
         </Grid>
     </Grid>
 </Container>
-
-
+      <Layout>
       <Routes>
-          <Route element={<Notes/>} path='/notes'/>
-          <Route element={<CreateNote/>} path='/create'/>
+              <Route element={<Notes/>} path='/notes'/>
+              <Route element={<CreateNote/>} path='/create'/>
+
       </Routes>
+      </Layout>
+
   </div>
 
   )
