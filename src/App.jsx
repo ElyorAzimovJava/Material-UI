@@ -8,6 +8,11 @@ import InputComponent from "./InputComponents.jsx";
 import RadioComponent from "./RadioComponent.jsx";
 import {Routes, Route} from "react-router-dom";
 import Notes from "./Notes.jsx";
+import CreateNote from "./CreateNote.jsx";
+import Link from '@mui/material/Link';
+import Grid from "@mui/material/Grid";
+import {makeStyles} from "@mui/styles";
+import {Container} from "@mui/material";
 /*
 const theme = createTheme({
     palette: {
@@ -25,17 +30,47 @@ const theme = createTheme({
     }
 })*/
 
+const useStyles = makeStyles({
+   grid: {
+       marginTop: "10px !important",
+       marginBottom: "30px !important",
 
+   },
+   link: {
+       fontSize: "20px !important",
+       textDecoration: "none !important",
+   }
+})
 function App() {
+    const classes = useStyles();
   return (
   <div >
-     <Create/>
-     <ButtonComponent/>
-     <Icon/>
-     <InputComponent/>
-     <RadioComponent/>
+<Container>
+    <Grid container spacing={2} className={classes.grid}>
+        <Grid item size={{xs: 12,md:6,lg:4}}>
+            <Link className={classes.link}
+                variant={'body1'}
+                color={'secondary'}
+                href={'/notes'}
+            >All Notes
+            </Link>
+        </Grid>
+        <Grid item size={{xs: 12,md:6,lg:4}}>
+            <Link
+                className={classes.link}
+                variant={'body1'}
+                color={'secondary'}
+                href={'/create'}
+            >Create
+            </Link>
+        </Grid>
+    </Grid>
+</Container>
+
+
       <Routes>
           <Route element={<Notes/>} path='/notes'/>
+          <Route element={<CreateNote/>} path='/create'/>
       </Routes>
   </div>
 
