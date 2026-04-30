@@ -46,7 +46,7 @@ function App() {
     const classes = useStyles();
   return (
   <div >
-<Container>
+{/*<Container>
     <Grid container spacing={2} className={classes.grid}>
         <Grid item size={{xs: 12,md:6,lg:4}}>
             <Link className={classes.link}
@@ -66,7 +66,7 @@ function App() {
             </Link>
         </Grid>
     </Grid>
-</Container>
+</Container>*/}
       <Layout>
       <Routes>
               <Route element={<Notes/>} path='/notes'/>
