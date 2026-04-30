@@ -1,0 +1,40 @@
+import {useEffect, useState} from "react";
+import Grid from '@mui/material/Grid';
+import {Container, Paper} from "@mui/material";
+function Notes(){
+    const [notes,setNotes] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:8000/notes')
+            .then(res => res.json())
+            .then(data => setNotes(data))
+    }, []);
+    return (
+        <Container>
+          {/*  <Grid container>
+               <Grid item size={{xs: 12, md:3, sm: 6}}>
+                   <Paper>1</Paper>
+               </Grid>
+                <Grid item size={{xs: 12, md:3, sm: 6}}>
+                   <Paper>2</Paper>
+               </Grid>
+                <Grid item size={{xs: 12, md:3, sm: 6}}>
+                   <Paper>3</Paper>
+               </Grid>
+                <Grid item  size={{xs: 12, md:3, sm: 6}}>
+                   <Paper>4</Paper>
+               </Grid>
+            </Grid>*/}
+
+            <Grid container>
+                {notes.map(note => (
+                    <Grid item key={note.id} size = {{xs:12, md:6, lg:4}}>
+                        <Paper>{note.title}</Paper>
+                    </Grid>
+                ))}
+            </Grid>
+
+
+        </Container>
+                    )
+}
+export default Notes;
